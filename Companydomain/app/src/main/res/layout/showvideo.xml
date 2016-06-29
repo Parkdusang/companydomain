@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+    tools:context="com.applay.haetae.companydomain.HT_InfoActivity"
+    android:id="@+id/showvideo"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/topvideo"/>
+
+    <LinearLayout
+        android:layout_weight="1.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/contentback"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/videobtn1"
+            android:background="@drawable/video1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+
+            />
+
+        <Button
+            android:layout_weight="1"
+
+            android:id="@+id/videobtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/video2"
+
+            />
+        <Button
+            android:layout_weight="1"
+
+            android:id="@+id/videobtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/video4"
+
+            />
+        <Button
+            android:layout_weight="1"
+
+            android:id="@+id/videobtn4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/video3"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>
