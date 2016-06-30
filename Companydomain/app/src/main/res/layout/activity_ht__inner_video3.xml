@@ -8,21 +8,17 @@
     tools:context="com.applay.haetae.companydomain.HT_InnerVideo1">
 
     <TextView
-        android:layout_weight="1.5"
+        android:layout_weight="1.2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <WebView
-        android:layout_margin="30dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.9"
-        android:id="@+id/webview3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    </WebView>
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_weight="1.0"
+        android:id="@+id/youtube_player3"
+        android:layout_width="wrap_content"
+        android:configChanges="orientation|keyboardHidden"
+        android:layout_height="wrap_content" />
     <TextView
-        android:layout_weight="0.2"
+        android:layout_weight="0.4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

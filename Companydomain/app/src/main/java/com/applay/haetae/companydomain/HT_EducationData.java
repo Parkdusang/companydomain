@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 
 public class HT_EducationData extends AppCompatActivity {
     Button btnAkbo,btnMusic,btnBook,btnFeel;
-    boolean check = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +58,7 @@ public class HT_EducationData extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(!check) {
+
             LinearLayout layout = (LinearLayout) findViewById(R.id.ht_educationback);
             layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background)));
             LinearLayout layout1 = (LinearLayout) findViewById(R.id.inneredu);
@@ -66,14 +66,13 @@ public class HT_EducationData extends AppCompatActivity {
 
             ImageView img = (ImageView) findViewById(R.id.edutop1);
             img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.edutop)));
-            check = true;
-        }
+
     }
 
     @Override
     protected void onStop() {
         super.onStop(); //save state data (background color) for future use
-        check = false;
+
         recycleView(findViewById(R.id.ht_educationback));
         recycleView(findViewById(R.id.edutop1));
         recycleView(findViewById(R.id.inneredu));

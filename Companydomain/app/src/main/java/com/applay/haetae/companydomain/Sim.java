@@ -11,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class Sim extends AppCompatActivity {
 
     Button btnNext,btnPre;
+    PhotoViewAttacher simAttacher;
+    ImageView sim1,sim2,sim3,sim4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,13 @@ public class Sim extends AppCompatActivity {
                 vFlipper.showNext();
             }
         });
+
+        sim1 = (ImageView)findViewById(R.id.sim1);
+        sim2 = (ImageView)findViewById(R.id.sim2);
+        sim3 = (ImageView)findViewById(R.id.sim3);
+        sim4 = (ImageView)findViewById(R.id.sim4);
+
+
     }
     @Override
     protected void onResume() {
@@ -47,14 +58,22 @@ public class Sim extends AppCompatActivity {
 
         ImageView img = (ImageView) findViewById(R.id.simtop);
         img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.simtop)));
-        ImageView sim1 = (ImageView) findViewById(R.id.sim1);
+         sim1 = (ImageView) findViewById(R.id.sim1);
         sim1.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim01)));
-        ImageView sim2 = (ImageView) findViewById(R.id.sim2);
+         sim2 = (ImageView) findViewById(R.id.sim2);
         sim2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim02)));
-        ImageView sim3 = (ImageView) findViewById(R.id.sim3);
+         sim3 = (ImageView) findViewById(R.id.sim3);
         sim3.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim03)));
-        ImageView sim4 = (ImageView) findViewById(R.id.sim4);
+         sim4 = (ImageView) findViewById(R.id.sim4);
         sim4.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim04)));
+        simAttacher = new PhotoViewAttacher(sim1);
+        simAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+        simAttacher = new PhotoViewAttacher(sim2);
+        simAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+        simAttacher = new PhotoViewAttacher(sim3);
+        simAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+        simAttacher = new PhotoViewAttacher(sim4);
+        simAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
 
     }
 

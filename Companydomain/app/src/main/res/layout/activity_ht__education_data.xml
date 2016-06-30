@@ -26,7 +26,6 @@
         android:paddingRight="50dp"
         android:paddingBottom="20dp"
         android:id="@+id/inneredu"
-        android:background="@drawable/contentback"
         android:orientation="vertical">
 
         <Button
@@ -34,24 +33,24 @@
             android:layout_height="0dp"
             android:id="@+id/btnAkbo"
             android:layout_weight="1"
-            android:background="@drawable/akbobutton1"/>
+            android:background="@drawable/makbobtn"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:id="@+id/btnMusic"
             android:layout_weight="1"
-            android:background="@drawable/musicbutton1"/>
+            android:background="@drawable/mmusicbtn"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/bookbutton1"
+            android:background="@drawable/mbookbtn"
             android:id="@+id/btnBook"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/feelbutton1"
+            android:background="@drawable/mfillbtn"
             android:id="@+id/btnFeel"/>
 
     </LinearLayout>

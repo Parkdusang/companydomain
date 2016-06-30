@@ -29,14 +29,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:background="@drawable/simbutton"
+            android:background="@drawable/msimbtn"
             android:id="@+id/btnSim"
             android:layout_weight="1"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:background="@drawable/sabutton"
+            android:background="@drawable/msabtn"
             android:id="@+id/btnSa"
             android:layout_weight="1"/>
 

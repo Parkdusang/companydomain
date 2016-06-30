@@ -24,15 +24,13 @@
             android:id="@+id/btn1"
             android:layout_weight="0.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainbtn2"/>
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btn2"
             android:layout_weight="0.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainbtn4"/>
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <LinearLayout
@@ -45,15 +43,13 @@
             android:id="@+id/btn3"
             android:layout_weight="0.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainbtn1"/>
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btn4"
             android:layout_weight="0.5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainbtn3"/>
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 </LinearLayout>

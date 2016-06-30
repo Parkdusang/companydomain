@@ -11,11 +11,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class Sa extends AppCompatActivity {
 
     Button btnPrev, btnNext;
     ViewFlipper vFlipper;
-
+    PhotoViewAttacher saAttacher;
+    ImageView saview01, saview02, saview03, saview04;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sa);
@@ -38,6 +41,13 @@ public class Sa extends AppCompatActivity {
             }
         });
 
+
+        saview01 = (ImageView)findViewById(R.id.sa1);
+        saview02 = (ImageView)findViewById(R.id.sa2);
+        saview03 = (ImageView)findViewById(R.id.sa3);
+        saview04 = (ImageView)findViewById(R.id.sa4);
+
+
     }
     @Override
     protected void onResume() {
@@ -50,11 +60,28 @@ public class Sa extends AppCompatActivity {
 
         ImageView img = (ImageView) findViewById(R.id.satop);
         img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.satop)));
+
+
+
+        saview01.setImageResource(R.drawable.sa1);
+        saview02.setImageResource(R.drawable.sa2);
+        saview03.setImageResource(R.drawable.sa3);
+        saview04.setImageResource(R.drawable.sa4);
+
+        saAttacher = new PhotoViewAttacher(saview01);
+        saAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+        saAttacher = new PhotoViewAttacher(saview02);
+        saAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+        saAttacher = new PhotoViewAttacher(saview03);
+        saAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+        saAttacher = new PhotoViewAttacher(saview04);
+        saAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
+
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy(); //save state data (background color) for future use
+    protected void onStop() {
+        super.onStop(); //save state data (background color) for future use
         recycleView(findViewById(R.id.saActivityback));
         recycleView(findViewById(R.id.satop));
         recycleView(findViewById(R.id.innersa));

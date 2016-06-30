@@ -62,12 +62,21 @@ public class Main extends AppCompatActivity {
         super.onResume();
         LinearLayout layout = (LinearLayout)findViewById(R.id.mainback);
         layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.mainback)));
+
+        btn1.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.mainbtn2)));
+        btn2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.mainbtn4)));
+        btn3.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.mainbtn1)));
+        btn4.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.mainbtn3)));
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy(); //save state data (background color) for future use
+    protected void onStop() {
+        super.onStop(); //save state data (background color) for future use
         recycleView(findViewById(R.id.mainback));
+        recycleView(findViewById(R.id.btn1));
+        recycleView(findViewById(R.id.btn2));
+        recycleView(findViewById(R.id.btn3));
+        recycleView(findViewById(R.id.btn4));
     }
 
     private void recycleView(View view) {

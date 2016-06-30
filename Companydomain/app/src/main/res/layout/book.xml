@@ -1,75 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center"
+android:id="@+id/bookback">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btnBookPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전"/>
+
+    <Button
+        android:id="@+id/btnBookNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다음"/>
+</LinearLayout>
+
+<ViewFlipper
+    android:id="@+id/BookviewFlipper1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
-    android:gravity="center"
-    android:id="@+id/bookback">
+    android:layout_height="match_parent">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/satop"
-        android:layout_weight="1"/>
+        android:layout_height="wrap_content">
 
-    <ViewFlipper
-        android:id="@+id/BookviewFlipper1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/book1" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/book1"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/book2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/book3"/>
-
-        </LinearLayout>
-    </ViewFlipper>
+            android:layout_height="wrap_content"
+            android:scaleType="matrix"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnBookPrev"
+        <ImageView
+            android:id="@+id/book2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="이전"/>
-
-        <Button
-            android:id="@+id/btnBookNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="다음"/>
-
+            android:layout_height="match_parent"
+            android:scaleType="matrix"
+             />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/book3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="matrix"
+            />
+    </LinearLayout>
+</ViewFlipper>
 </LinearLayout>

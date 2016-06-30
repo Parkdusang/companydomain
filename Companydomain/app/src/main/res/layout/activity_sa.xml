@@ -38,7 +38,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/sa1" />
+                    android:id="@+id/sa1"
+                    android:scaleType="matrix"/>
 
 
             </LinearLayout>
@@ -48,9 +49,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/sa2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/sa2" />
+                    android:scaleType="matrix"/>
 
             </LinearLayout>
 
@@ -59,9 +61,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/sa3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/sa3" />
+                    android:scaleType="matrix"/>
 
             </LinearLayout>
 
@@ -70,9 +73,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/sa4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/sa4" />
+                    android:scaleType="matrix"/>
 
             </LinearLayout>
 

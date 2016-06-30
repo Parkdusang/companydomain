@@ -21,7 +21,7 @@ public class CeoActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.ceoback);
-        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.ceo_info)));
+        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.info)));
 
 
     }

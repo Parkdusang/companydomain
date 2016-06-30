@@ -19,7 +19,7 @@ public class ComActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.comback);
-        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.ht_info)));
+        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.info2)));
 
 
     }
