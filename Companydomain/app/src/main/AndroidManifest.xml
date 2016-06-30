@@ -33,18 +33,8 @@
         <activity android:name=".Akbo" />
         <activity android:name=".Musicplay" />
 
-        <service
-            android:name=".Music"
-            android:enabled="true"
-            android:exported="true" />
-
         <activity android:name=".Book" />
         <activity android:name=".FeelMusic" />
-
-        <service
-            android:name=".Feel"
-            android:enabled="true"
-            android:exported="true" />
 
         <activity android:name=".Sim" />
         <activity android:name=".Sa"></activity>

@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
 public class Sa extends AppCompatActivity {
@@ -41,14 +42,22 @@ public class Sa extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        LinearLayout layout = (LinearLayout)findViewById(R.id.saActivityback);
-        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background)));
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.saActivityback);
+        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background2)));
+
+        RelativeLayout layout2 = (RelativeLayout)findViewById(R.id.innersa);
+        layout2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.contentback2)));
+
+        ImageView img = (ImageView) findViewById(R.id.satop);
+        img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.satop)));
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy(); //save state data (background color) for future use
         recycleView(findViewById(R.id.saActivityback));
+        recycleView(findViewById(R.id.satop));
+        recycleView(findViewById(R.id.innersa));
     }
 
     private void recycleView(View view) {

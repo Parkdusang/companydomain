@@ -1,88 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/simback12"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
-    android:orientation="vertical"
     android:gravity="center"
-    android:id="@+id/simback">
+    android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/simtop"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/simtop"
-        android:layout_weight="1"/>
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
 
-    <ViewFlipper
-        android:id="@+id/viewFlipper1"
+    <RelativeLayout
+        android:id="@+id/innersim"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:padding="20dp"
+        android:layout_below="@+id/simtop">
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/simlinearbtn">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sim1" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/sim2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/sim3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/sim4" />
+
+            </LinearLayout>
+
+        </ViewFlipper>
 
         <LinearLayout
+            android:id="@+id/simlinearbtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
 
-            <ImageView
+            <Button
+                android:id="@+id/btnPrev2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/sim01" />
+                android:layout_weight="1"
+                android:background="@drawable/previous" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageView
+            <Button
+                android:id="@+id/btnNext2"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/sim02" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@drawable/next" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/sim03"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/sim04" />
-
-        </LinearLayout>
-
-    </ViewFlipper>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnactivityPre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="이전"/>
-
-        <Button
-            android:id="@+id/btnsimactivityNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="다음"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

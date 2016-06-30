@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
 public class Sim extends AppCompatActivity {
@@ -19,9 +20,9 @@ public class Sim extends AppCompatActivity {
         setContentView(R.layout.activity_sim);
 
         final ViewFlipper vFlipper;
-        vFlipper = (ViewFlipper)findViewById(R.id.viewFlipper1);
-        btnPre = (Button)findViewById(R.id.btnactivityPre);
-        btnNext = (Button)findViewById(R.id.btnsimactivityNext);
+        vFlipper = (ViewFlipper)findViewById(R.id.viewFlipper2);
+        btnPre = (Button)findViewById(R.id.btnPrev2);
+        btnNext = (Button)findViewById(R.id.btnNext2);
         btnPre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,14 +39,37 @@ public class Sim extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        LinearLayout layout = (LinearLayout)findViewById(R.id.simback);
-        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background)));
+        RelativeLayout layout1 = (RelativeLayout)findViewById(R.id.simback12);
+        layout1.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background2)));
+
+        RelativeLayout layout2 = (RelativeLayout)findViewById(R.id.innersim);
+        layout2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.contentback2)));
+
+        ImageView img = (ImageView) findViewById(R.id.simtop);
+        img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.simtop)));
+        ImageView sim1 = (ImageView) findViewById(R.id.sim1);
+        sim1.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim01)));
+        ImageView sim2 = (ImageView) findViewById(R.id.sim2);
+        sim2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim02)));
+        ImageView sim3 = (ImageView) findViewById(R.id.sim3);
+        sim3.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim03)));
+        ImageView sim4 = (ImageView) findViewById(R.id.sim4);
+        sim4.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim04)));
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy(); //save state data (background color) for future use
-        recycleView(findViewById(R.id.simback));
+        recycleView(findViewById(R.id.simback12));
+        recycleView(findViewById(R.id.innersim));
+        recycleView(findViewById(R.id.simtop));
+
+        recycleView(findViewById(R.id.sim1));
+        recycleView(findViewById(R.id.sim2));
+        recycleView(findViewById(R.id.sim3));
+        recycleView(findViewById(R.id.sim4));
+
     }
 
     private void recycleView(View view) {

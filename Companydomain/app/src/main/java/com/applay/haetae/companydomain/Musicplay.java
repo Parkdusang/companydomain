@@ -1,9 +1,9 @@
 package com.applay.haetae.companydomain;
 
-import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,40 +12,39 @@ import android.widget.LinearLayout;
 
 public class Musicplay extends AppCompatActivity {
 
-    Intent intent;
     Button btnPlay, btnStop;
-
+    MediaPlayer mp;
+    boolean check2 = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.musicplay);
 
-        intent = new Intent(this, Music.class);
         btnPlay = (Button) findViewById(R.id.btnMusicPlay);
         btnStop = (Button) findViewById(R.id.btnMusicStop);
-
+        mp = MediaPlayer.create(Musicplay.this, R.raw.music1);
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startService(intent);
-                android.util.Log.i("서비스 테스트", "startService()");
+                if(!check2) {
+                    check2 = true;
+                    mp.start();
+
+                }
             }
         });
 
         btnStop.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                stopService(intent);
-                android.util.Log.i("서비스 테스트", "stopService()");
+                if(check2) {
+                    check2 = false;
+                    mp.pause();
+                }
             }
         });
 
     }
-    @Override
-    public void onPause(){
-        super.onPause();
-        stopService(intent);
 
-    }
     @Override
     protected void onResume() {
         super.onResume();

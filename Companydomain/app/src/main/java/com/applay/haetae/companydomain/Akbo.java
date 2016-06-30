@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 public class Akbo extends AppCompatActivity {
 
     Button btnSim1, btnSa1;
-    boolean check =false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,7 @@ public class Akbo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent inIntent = new Intent(getApplicationContext(), Sim.class);
                 startActivity(inIntent);
+                finish();
             }
         });
         btnSa1.setOnClickListener(new View.OnClickListener() {
@@ -40,8 +41,7 @@ public class Akbo extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(!check) {
-            check = true;
+
             LinearLayout layout = (LinearLayout) findViewById(R.id.akbobackground);
             layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background)));
             LinearLayout layout2 = (LinearLayout) findViewById(R.id.innerakbobackground);
@@ -49,16 +49,16 @@ public class Akbo extends AppCompatActivity {
 
             ImageView img = (ImageView) findViewById(R.id.akbotop1);
             img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.akbotop)));
-        }
+
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy(); //save state data (background color) for future use
+    protected void onStop() {
+        super.onStop(); //save state data (background color) for future use
         recycleView(findViewById(R.id.akbobackground));
         recycleView(findViewById(R.id.akbotop1));
         recycleView(findViewById(R.id.innerakbobackground));
-        check = false;
+
     }
 
     private void recycleView(View view) {
