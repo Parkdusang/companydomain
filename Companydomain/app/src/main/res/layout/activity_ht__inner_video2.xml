@@ -3,23 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backvideo3"
+    android:id="@+id/backvideo2"
     android:orientation="vertical"
-    tools:context="com.applay.haetae.companydomain.HT_InnerVideo1">
+    tools:context="com.applay.haetae.companydomain.HT_InnerVideo1"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
 
-    <TextView
-        android:layout_weight="1.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:layout_weight="1.0"
-        android:id="@+id/youtube_player2"
-        android:layout_width="wrap_content"
-        android:configChanges="orientation|keyboardHidden"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_weight="0.4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/videotop2"/>
+
+    <LinearLayout
+        android:layout_weight="3.6"
+        android:id="@+id/innervideo2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" />
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:layout_weight="1.0"
+            android:id="@+id/youtube_player2"
+            android:layout_width="wrap_content"
+            android:configChanges="orientation|keyboardHidden"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_weight="0.4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
 
 </LinearLayout>

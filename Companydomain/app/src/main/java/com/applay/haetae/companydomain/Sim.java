@@ -58,14 +58,14 @@ public class Sim extends AppCompatActivity {
 
         ImageView img = (ImageView) findViewById(R.id.simtop);
         img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.simtop)));
-         sim1 = (ImageView) findViewById(R.id.sim1);
-        sim1.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim01)));
-         sim2 = (ImageView) findViewById(R.id.sim2);
-        sim2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim02)));
-         sim3 = (ImageView) findViewById(R.id.sim3);
-        sim3.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim03)));
-         sim4 = (ImageView) findViewById(R.id.sim4);
-        sim4.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.sim04)));
+
+
+
+
+        sim1.setImageResource(R.drawable.sim01);
+        sim2.setImageResource(R.drawable.sim02);
+        sim3.setImageResource(R.drawable.sim03);
+        sim4.setImageResource(R.drawable.sim04);
         simAttacher = new PhotoViewAttacher(sim1);
         simAttacher.setScaleType((ImageView.ScaleType.FIT_CENTER));
         simAttacher = new PhotoViewAttacher(sim2);
@@ -78,16 +78,16 @@ public class Sim extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy(); //save state data (background color) for future use
+    protected void onStop() {
+        super.onStop(); //save state data (background color) for future use
         recycleView(findViewById(R.id.simback12));
         recycleView(findViewById(R.id.innersim));
         recycleView(findViewById(R.id.simtop));
 
-        recycleView(findViewById(R.id.sim1));
-        recycleView(findViewById(R.id.sim2));
-        recycleView(findViewById(R.id.sim3));
-        recycleView(findViewById(R.id.sim4));
+        ((BitmapDrawable)sim1.getDrawable()).getBitmap().recycle();
+        ((BitmapDrawable)sim2.getDrawable()).getBitmap().recycle();
+        ((BitmapDrawable)sim3.getDrawable()).getBitmap().recycle();
+        ((BitmapDrawable)sim4.getDrawable()).getBitmap().recycle();
 
     }
 

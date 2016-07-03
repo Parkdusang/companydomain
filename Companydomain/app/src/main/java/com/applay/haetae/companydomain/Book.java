@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
@@ -57,11 +57,13 @@ public class Book extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        LinearLayout layout = (LinearLayout)findViewById(R.id.bookback);
-        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background)));
-//        bookview1.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources() , R.drawable.book1)));
-//        bookview2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.book2)));
-//        bookview3.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources() , R.drawable.book3)));
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.bookback);
+        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background2)));
+        RelativeLayout layout2 = (RelativeLayout)findViewById(R.id.innerbook);
+        layout2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.contentback2)));
+
+        ImageView img = (ImageView)findViewById(R.id.booktop);
+        img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.booktop)));
 
 
         bookview1.setImageResource(R.drawable.book1);
@@ -84,6 +86,8 @@ public class Book extends AppCompatActivity {
     protected void onStop() {
         super.onStop(); //save state data (background color) for future use
         recycleView(findViewById(R.id.bookback));
+        recycleView(findViewById(R.id.innerbook));
+        recycleView(findViewById(R.id.booktop));
         recycleView(findViewById(R.id.book1));
         recycleView(findViewById(R.id.book2));
         recycleView(findViewById(R.id.book3));

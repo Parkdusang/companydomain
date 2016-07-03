@@ -85,6 +85,11 @@ public class Sa extends AppCompatActivity {
         recycleView(findViewById(R.id.saActivityback));
         recycleView(findViewById(R.id.satop));
         recycleView(findViewById(R.id.innersa));
+
+        ((BitmapDrawable)saview01.getDrawable()).getBitmap().recycle();
+        ((BitmapDrawable)saview02.getDrawable()).getBitmap().recycle();
+        ((BitmapDrawable)saview03.getDrawable()).getBitmap().recycle();
+        ((BitmapDrawable)saview04.getDrawable()).getBitmap().recycle();
     }
 
     private void recycleView(View view) {

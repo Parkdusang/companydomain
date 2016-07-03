@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -30,14 +31,27 @@ public class HT_InnerVideo1 extends YouTubeBaseActivity implements YouTubePlayer
     @Override
     protected void onResume() {
         super.onResume();
-        LinearLayout layout = (LinearLayout)findViewById(R.id.video1);
-        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.backvideo1)));
+        LinearLayout layout = (LinearLayout)findViewById(R.id.backvideo1);
+        layout.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.background2)));
+
+
+        LinearLayout layout2 = (LinearLayout)findViewById(R.id.innervideo1);
+        layout2.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.contentback2)));
+
+        ImageView img = (ImageView) findViewById(R.id.videotop1);
+        img.setBackgroundDrawable(new BitmapDrawable(getResources(), BitmapFactory.decodeResource(getResources(), R.drawable.videotop1)));
+
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy(); //save state data (background color) for future use
-        recycleView(findViewById(R.id.video1));
+        recycleView(findViewById(R.id.backvideo1));
+        recycleView(findViewById(R.id.innervideo1));
+        recycleView(findViewById(R.id.videotop1));
+
+
     }
 
     private void recycleView(View view) {
